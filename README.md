@@ -31,10 +31,9 @@ This project performs basic arithmetic operations through an interactive GUI (Gr
 ```
 Calculator-Using-Tkinter/
 │
-├── CALCULATOR USING TKINTER.ipynb       ← Main Python script
+├── CALCULATOR USING TKINTER.py       ← Main Python script
 ├── README.md                            ← Project documentation
-└── Images/
-    └── calculator_screenshot.png
+└── calculator_screenshot.png
 ```
 
 ---
