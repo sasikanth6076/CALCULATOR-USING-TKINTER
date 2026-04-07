@@ -90,7 +90,7 @@ def div():
     f_num = int(first_num)
     entry_box.delete(0, END)
 
-button_divide = Button(window, text = '%', padx=25, pady=20, command = div)
+button_divide = Button(window, text = '/', padx=25, pady=20, command = div)
 button_divide.place(x=75, y=275)
 
 
