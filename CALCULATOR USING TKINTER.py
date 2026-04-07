@@ -35,7 +35,7 @@ button_7 = Button(window, text="7", padx=25, pady=20, command=lambda: click(7))
 button_7.place(x=0, y=200)
 button_8 = Button(window, text="8", padx=25, pady=20, command=lambda: click(8))
 button_8.place(x=75, y=200)
-button_9 = Button(window, text="9", padx=25, pady=20)
+button_9 = Button(window, text="9", padx=25, pady=20, command=lambda: click(9))
 button_9.place(x=150, y=200)
 button_0 = Button(window, text="0", padx=25, pady=20, command=lambda: click(0))
 button_0.place(x=0, y=275)
@@ -99,14 +99,20 @@ button_divide.place(x=75, y=275)
 def equal():
         second_num = entry_box.get()
         entry_box.delete(0, END)
-        if math == 'addition':
-            entry_box.insert(0, f_num + int(second_num))
-        elif math == 'subtraction':
-            entry_box.insert(0, f_num - int(second_num))
-        elif math == 'multiplication':
-            entry_box.insert(0, f_num * int(second_num))   
-        elif math == 'division':
-            entry_box.insert(0, f_num / int(second_num))
+
+        #Handling division by zero error by try except method
+        try:
+            if math == 'addition':
+                entry_box.insert(0, f_num + int(second_num))
+            elif math == 'subtraction':
+                entry_box.insert(0, f_num - int(second_num))
+            elif math == 'multiplication':
+                entry_box.insert(0, f_num * int(second_num))   
+            elif math == 'division':
+                    entry_box.insert(0, f_num / int(second_num))
+
+        except ZeroDivisionError:
+            entry_box.insert(0, "Error: Division by zero")
         
 
 button_equal = Button(window, text = '=', padx=25, pady=20, command = equal)
